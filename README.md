@@ -1,5 +1,5 @@
 # KESS
-Programmierkurs für Anfänger
+Python Programmierkurs für Anfänger
 
 Hier hinterlege ich die Programmierbeispiele unseres Kurses. Jeder Teilnehmer kann sich diese einfach durch Copy&Paste kopieren und in seinen eigenen Visual Studio Code Editor einfügen.
 
