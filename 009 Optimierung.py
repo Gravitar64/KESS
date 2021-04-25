@@ -5,14 +5,9 @@
 
 besucher = 200
 eintrittspreis = 8.50
-max_einnahmen = besucher * eintrittspreis
 
 while eintrittspreis > 0:
+  einnahmen = besucher * eintrittspreis
+  print(besucher, eintrittspreis, einnahmen)
   eintrittspreis -= 0.50
   besucher += 20
-  einnahmen = besucher * eintrittspreis
-  if einnahmen > max_einnahmen:
-    max_einnahmen = einnahmen
-    best_preis = eintrittspreis
-    best_besucher = besucher
-print(f'Bei {best_besucher} Besucher mit {best_preis} Eintrittspreis werden {max_einnahmen} erziehlt')
