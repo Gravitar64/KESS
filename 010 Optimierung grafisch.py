@@ -7,15 +7,16 @@ from matplotlib import pyplot as plt
 
 besucher = 200
 eintrittspreis = 8.50
-ergebnisse = []
+erg_x, erg_y = [], []
 
 while eintrittspreis > 0:
   einnahmen = besucher * eintrittspreis
-  ergebnisse.append((eintrittspreis, einnahmen))
+  erg_x.append(eintrittspreis)
+  erg_y.append(einnahmen)
   eintrittspreis -= 0.50
   besucher += 20
 
-plt.scatter([x for x,y in ergebnisse], [y for x,y in ergebnisse])
+plt.scatter(erg_x, erg_y)
 plt.show()
 
 
