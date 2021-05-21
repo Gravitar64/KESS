@@ -5,4 +5,5 @@ URL = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_La
 inzidenzen = requests.get(URL).json()
 
 for region in inzidenzen['features']:
-  print(region['attributes']['GEN'], region['attributes']['cases7_per_100k_txt'])
+  print(region['attributes']['GEN'],
+        region['attributes']['cases7_per_100k_txt'])
