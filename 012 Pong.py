@@ -1,33 +1,32 @@
 import pygame as pg 
 
 pg.init()
-b,h = 800,600
-screen = pg.display.set_mode((b,h))
-
-paddle1 = pg.Rect(0,h/2,10,100)
-paddle2 = pg.Rect(b-10,h/2,10,100)
-pong = pg.Rect(b/2, h/2, 20, 20)
-pong_richtung = [15,12]
+fenster = pg.display.set_mode((800,600))
+x,y = 400,300
+rx,ry = 16,16
+s1x,s1y = 780,200
+s2x,s2y = 0,200
 
 weitermachen = True
 clock = pg.time.Clock()
+
 while weitermachen:
+  fenster.fill((0,0,0))
   clock.tick(40)
-  screen.fill((0,0,0))
   for ereignis in pg.event.get():
     if ereignis.type == pg.QUIT:
       weitermachen = False
-  paddle1[1] = pg.mouse.get_pos()[1]
-  paddle2[1] = pong[1] - 50
-  pg.draw.rect(screen,(255,255,255), paddle1)
-  pg.draw.rect(screen,(255,255,255), paddle2)
-  pg.draw.rect(screen,(255,255,255), pong)
-  pong[0] += pong_richtung[0]
-  pong[1] += pong_richtung[1]
-  if pong[0] < 0 or pong[0] > b-20:
-    pong_richtung[0] *= -1
-  if pong[1] < 0 or pong[1] > h-20:
-    pong_richtung[1] *= -1  
-  pg.display.flip()
+  pg.draw.rect(fenster,(255,0,0),(x,y,20,20))
+  pg.draw.rect(fenster,(0,0,255),(s1x,s1y,20,100))
+  pg.draw.rect(fenster,(255,0,255),(s2x,s2y,20,100))
+  s2y = pg.mouse.get_pos()[1]
+  x+=rx
+  y+=ry
+  s1y = y-30
+  if x > 780 or x < 20:
+    rx = -rx
+  if y > 600 or y < 0:
+    ry = -ry
+  pg.display.flip()    
 
 pg.quit()
