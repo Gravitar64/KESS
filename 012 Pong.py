@@ -1,6 +1,5 @@
 import pygame as pg 
 
-pg.init()
 fenster = pg.display.set_mode((800,600))
 x,y = 400,300
 rx,ry = 16,16
@@ -28,5 +27,3 @@ while weitermachen:
   if y > 600 or y < 0:
     ry = -ry
   pg.display.flip()    
-
-pg.quit()
